@@ -14,6 +14,8 @@ public class Board {
             board[1][col] = new Piece(TypeOfPiece.PAWN, Color.WHITE);
             board[6][col] = new Piece(TypeOfPiece.PAWN, Color.BLACK);
         }
+
+        // important pieces
         board[0][0] = new Piece(TypeOfPiece.TOWER, Color.WHITE);
         board[0][1] = new Piece(TypeOfPiece.KNIGHT, Color.WHITE);
         board[0][2] = new Piece(TypeOfPiece.BISHOP, Color.WHITE);
