@@ -2,6 +2,14 @@ public class Piece {
     private TypeOfPiece type;
     private Color color;
 
+    public TypeOfPiece getType() {
+        return type;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
     public Piece(TypeOfPiece type, Color color) {
         this.type = type;
         this.color = color;

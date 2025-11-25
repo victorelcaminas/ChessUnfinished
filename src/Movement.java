@@ -5,11 +5,37 @@ public class Movement {
     public int destRow;
     public char destCol;
 
-    public Movement(Piece piece, int originRow, char originCol, int destRow, char destCol) {
+    public Movement(Piece piece, char originCol, int originRow, char destCol, int destRow) {
         this.piece = piece;
         this.originRow = originRow;
-        this.originCol = originCol;
+        this.originCol = Character.toUpperCase(originCol);
         this.destRow = destRow;
-        this.destCol = destCol;
+        this.destCol = Character.toUpperCase(destCol);
+    }
+
+    @Override
+    public String toString() {
+        return piece + " from " + originCol + originRow + " to " +
+                destCol + destRow;
+    }
+
+    public Piece getPiece() {
+        return piece;
+    }
+
+    public int getOriginRow() {
+        return originRow;
+    }
+
+    public char getOriginCol() {
+        return originCol;
+    }
+
+    public int getDestRow() {
+        return destRow;
+    }
+
+    public char getDestCol() {
+        return destCol;
     }
 }

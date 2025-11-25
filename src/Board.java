@@ -56,4 +56,25 @@ public class Board {
         s += "\n";
         return s;
     }
+
+    public boolean movePiece(Movement movement) {
+        char originCol = movement.getOriginCol();
+        int originRow = movement.getOriginRow();
+        char destCol = movement.getDestCol();
+        int destRow = movement.getDestRow();
+        int originColIndex = originCol - 'A';
+        int originRowIndex = originRow - 1;
+        int destColIndex = destCol - 'A';
+        int destRowIndex = destRow - 1;
+        if (board[originRowIndex][originColIndex] == null) {
+            return false;
+        }
+        if ((board[originRowIndex][originColIndex].getType() != movement.getPiece().getType() ||
+        board[originRowIndex][originColIndex].getColor() != movement.getPiece().getColor())) {
+            return false;
+        }
+        board[destRowIndex][destColIndex] = board[originRowIndex][originColIndex];
+        board[originRowIndex][originColIndex] = null;
+        return true;
+    }
 }
